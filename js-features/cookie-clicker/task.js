@@ -1,7 +1,7 @@
 const image = document.getElementById("cookie");
 const count = document.getElementById("clicker__counter");
 const speed = document.getElementById("clicker__speed");
-let now = new Date();
+let timeLastClick = 0;
 
 function changeSize() {
     count.textContent = parseInt(count.textContent) + 1;
@@ -12,7 +12,11 @@ function changeSize() {
     }
 
     let nowAfterClick = new Date();
-    let t = (nowAfterClick - now) / 1000;
-    speed.textContent = (count.textContent / t).toFixed(2);
+    let timeAfterClick = nowAfterClick.getTime();
+    let t = (timeAfterClick - timeLastClick) / 1000;
+    speed.textContent = (1 / t).toFixed(2);
+
+    timeLastClick = timeAfterClick;
 }
+
 image.onclick = changeSize;
