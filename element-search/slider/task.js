@@ -20,17 +20,18 @@ for (i = 0; i < dots.length; i++) {
     dot.onclick = leafDots;
 
     function leafDots() {
-       slides.item(currentSlide).className = "slider__item";
-       dots.item(currentSlide).className = "slider__dot";
+        slides.item(currentSlide).className = "slider__item";
+        dots.item(currentSlide).className = "slider__dot";
 
         slide.className = "slider__item slider__item_active";
         dot.className = "slider__dot slider__dot_active";
 
-        currentSlide = i;
-        currentDot = i;
+      //  currentSlide = i;
+       // currentDot = i;
+       // console.log(i);
     }
 }
-//-----------------------------------
+//-----------------------------------------------------------------------------
 
 prevButton.onclick = leafLeft;
 function leafLeft() {
