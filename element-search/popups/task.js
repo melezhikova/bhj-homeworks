@@ -5,6 +5,7 @@ const successPopup = document.getElementById("modal_success");
 const showSuccess = document.querySelector(".show-success");
 
 function successOpen () {
+    mainPopup.className = "modal";
     successPopup.className = "modal modal_active";
 }
 showSuccess.onclick = successOpen;
