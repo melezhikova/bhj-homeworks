@@ -48,6 +48,10 @@
 
 .dropdown__list_active {
   display: block;
+/*  margin-left: auto;
+  margin-right: auto;*/
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .card {
