@@ -5,13 +5,9 @@ rotators.forEach ((item) => {
     item.setAttribute('style', "color:" + color);
 })
 
-// let speed = [];
-// rotators.forEach ((item) => {
-//     let speedItem = item.getAttribute("data-speed");
-//     speed.push(speedItem);
-// });
+let speed;
 
-function rotation () {
+setTimeout (function rotation () {
     let currentRotator = rotators.findIndex((item) => 
         item.classList.contains('rotator__case_active'));
     rotators[currentRotator].classList.remove('rotator__case_active');
@@ -22,7 +18,9 @@ function rotation () {
     } else {
         rotators[currentRotator].classList.add('rotator__case_active');
     }
-}
 
-setInterval (rotation, 1000);
+    speed = rotators[currentRotator].getAttribute("data-speed");
 
+    setTimeout(rotation, speed);
+    
+}, speed)
