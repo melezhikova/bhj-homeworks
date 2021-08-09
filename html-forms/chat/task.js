@@ -14,7 +14,7 @@ function timer () {
     let count = 0;
     idTimer = setInterval (() => {
         count += 1;
-        if (count === 10) {
+        if (count === 30) {
             let time = getTime();
             messages.innerHTML += `
                 <div class="message">
@@ -22,6 +22,7 @@ function timer () {
                     <div class="message__text">Ну не молчите, напишите уже что-нибудь</div>
                 </div>
             `;
+            messages.scrollIntoView(false);
             clearInterval(idTimer);
             timer ();
         }
@@ -45,6 +46,7 @@ function addBotMessage () {
             <div class="message__text">${message}</div>
         </div>
     `;
+    messages.scrollIntoView(false);
 }
 
 function getTime () {
@@ -71,7 +73,9 @@ function addClientMessage () {
         </div>
     `;
     clientMessage.value = "";
+    messages.scrollIntoView(false);
     addBotMessage ();
+    messages.scrollIntoView(false);
     clearInterval(idTimer);
     timer ();
 }

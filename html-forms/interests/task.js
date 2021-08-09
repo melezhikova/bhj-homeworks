@@ -29,7 +29,6 @@ for (let i = 0; i < interests.length; i++) {
             for (let i = 0; i < checkGroup.length; i++) {
                 if (checkGroup[i].checked === true) {
                     count += 1;
-                    console.log(count);
                 }
             }
             if (count === checkGroup.length) {
@@ -41,6 +40,8 @@ for (let i = 0; i < interests.length; i++) {
             } else {
                 parentCheck.indeterminate = true;
             }
+            interest = parentCheck;
+            markUp ();
         }
     }
 }
