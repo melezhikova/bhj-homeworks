@@ -74,7 +74,7 @@ body {
   padding: 0 10px;
 }
 
-.product__add {
+.product__add, .product__delete {
   background: green;
   padding: 10px 20px;
   color: #fff;
