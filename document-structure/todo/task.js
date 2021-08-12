@@ -1,13 +1,14 @@
 const tasksBox = document.querySelector(".tasks__list");
 const taskInput = document.getElementById("task__input");
 const taskButtonAdd = document.getElementById("tasks__add");
+const form = document.forms['tasks__form'];
 
 function taskAdd () {
-    if (taskInput.value) {
-        console.log(taskInput.value);
+    let task = taskInput.value.trim();
+    if (task) {
         tasksBox.innerHTML += `
             <div class="task">
-                <div class="task__title">${taskInput.value}</div>
+                <div class="task__title">${task}</div>
                 <a href="#" class="task__remove">&times;</a>
             </div>
         `;
@@ -30,4 +31,5 @@ function check (event) {
 }
 
 window.addEventListener('keydown', check);
+form.addEventListener('submit', () => event.preventDefault());
 taskButtonAdd.addEventListener("click", taskAdd);
