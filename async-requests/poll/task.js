@@ -35,6 +35,11 @@ xhr.addEventListener('readystatechange', function () {
                 xhr2.addEventListener('readystatechange', function () {
                     if (xhr2.readyState === xhr.DONE && xhr2.status === 200) {
                         let pollResults = JSON.parse(xhr2.response).stat;
+                        let count = 0;
+                        pollResults.forEach ((item) => {
+                            count += item.votes;
+                        });
+                        console.log(pollResults, count);
                         pollAnswers.innerHTML = '';
                         pollResults.forEach ((item) => {
                             pollAnswers.innerHTML += `
@@ -43,7 +48,7 @@ xhr.addEventListener('readystatechange', function () {
                                         ${item.answer}:
                                     </div>
                                     <div class="item__votes">
-                                        ${item.votes} голосов
+                                        ${(item.votes/count*100).toFixed(2)}%
                                     </div>
                                 </div>
                             `;
