@@ -10,10 +10,10 @@ button.addEventListener('click', () => {
     xhr.open('POST', url);
     
     if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-        let result = xhr.responseText;
+        let result = xhr.response;
         console.log(result);
     } else {
-        let result = xhr.responseText;
+        let result = xhr.response;
         console.log(result);
     }
 
