@@ -6,7 +6,7 @@ window.addEventListener('unload', () => {
 })
 
 window.addEventListener('load', () => {
-    editor.value = localStorage.message;
+    editor.value = localStorage.getItem('message');
 })
 
 clear.addEventListener('click', () => {

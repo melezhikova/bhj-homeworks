@@ -1,9 +1,14 @@
-.signin {
+.signin, .logout {
   display: none;
 }
-.signin_active {
+.signin_active, .logout_active {
   display: block;
 }
+
+.logout_active {
+  margin-top: 20px;
+}
+
 .control {
     width: 100%;
     display: block;
